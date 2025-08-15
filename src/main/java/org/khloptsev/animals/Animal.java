@@ -1,14 +1,17 @@
 package org.khloptsev.animals;
 
+import org.khloptsev.island.Position;
+
 public abstract class Animal {
     private final int WEIGHT;
-    private final int POPULATION;
+    private final int POPULATION_PER_CELL;
     private final int MAX_SPEED;
     private final int FOOD_REQUIRED;
+    private Position position;
 
-    public Animal(int weight, int population, int maxSpeed, int foodRequired) {
+    public Animal(int weight, int populationPerCell, int maxSpeed, int foodRequired) {
         WEIGHT = weight;
-        POPULATION = population;
+        POPULATION_PER_CELL = populationPerCell;
         MAX_SPEED = maxSpeed;
         FOOD_REQUIRED = foodRequired;
     }
@@ -18,7 +21,7 @@ public abstract class Animal {
     }
 
     public int getPopulation() {
-        return POPULATION;
+        return POPULATION_PER_CELL;
     }
 
     public int getSpeed() {
@@ -29,7 +32,13 @@ public abstract class Animal {
         return FOOD_REQUIRED;
     }
 
+    public Position getPosition() {
+        return position;
+    }
 
+    public void setPosition(Position position) {
+        this.position = position;
+    }
 
 
     public abstract void move();
