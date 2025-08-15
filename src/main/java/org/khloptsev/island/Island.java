@@ -17,10 +17,15 @@ public class Island {
         }
     }
 
-    public void printIsland() {
+    public void printReport() {
         for (int y = 0; y < HEIGHT; y++) {
             for (int x = 0; x < WIDTH; x++) {
-                System.out.print("[" + GRID[y][x] + "] ");  // пока пустая клетка
+                System.out.print("[\n\t"
+                        + "Клетка: " + GRID[y][x] + "\n\t"
+                        + GRID[y][x].getPopulationInfo() + "\n\t"
+                        + GRID[y][x].getPlantsInfo() +
+                        "\n]\n"
+                ); // пока пустая клетка
             }
             System.out.println();
         }
