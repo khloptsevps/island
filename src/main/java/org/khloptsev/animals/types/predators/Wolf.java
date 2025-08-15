@@ -1,8 +1,6 @@
-package org.khloptsev.animals.types;
+package org.khloptsev.animals.types.predators;
 
-import org.khloptsev.animals.Animal;
-
-public class Wolf extends Animal {
+public class Wolf extends Predator {
     public Wolf() {
         super(30, 30, 3, 8);
     }
