@@ -2,7 +2,8 @@ package org.khloptsev.animals.factory;
 
 import org.khloptsev.animals.Animal;
 import org.khloptsev.animals.types.AnimalType;
-import org.khloptsev.animals.types.Wolf;
+import org.khloptsev.animals.types.predators.Wolf;
+import org.khloptsev.animals.types.herbivores.Rabbit;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -13,6 +14,7 @@ public class AnimalFactory {
 
     static {
         registry.put(AnimalType.WOLF, Wolf::new);
+        registry.put(AnimalType.RABBIT, Rabbit::new);
     }
 
     public static Animal create(AnimalType type) {
@@ -29,9 +31,5 @@ public class AnimalFactory {
             throw new IllegalArgumentException("Неизвестный тип животного: " + type);
         }
         return supplier.get().getPopulation();
-    }
-
-    public static void p() {
-        System.out.println(registry);
     }
 }
