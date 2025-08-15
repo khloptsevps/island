@@ -8,7 +8,7 @@ public enum AnimalType {
 //    EAGLE,
 //    HORSE,
 //    DEER,
-//    RABBIT,
+    RABBIT,
 //    MOUSE,
 //    GOAT,
 //    SHEEP,
